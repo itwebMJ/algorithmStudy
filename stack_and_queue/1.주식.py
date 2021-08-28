@@ -1,4 +1,5 @@
 '''
+https://programmers.co.kr/learn/courses/30/lessons/42584
 문제 설명
 초 단위로 기록된 주식가격이 담긴 배열 prices가 매개변수로 주어질 때, 가격이 떨어지지 않은 기간은 몇 초인지를 return 하도록 solution 함수를 완성하세요.
 
@@ -17,17 +18,14 @@ prices	        return
 ※ 공지 - 2019년 2월 28일 지문이 리뉴얼되었습니다.
 
 '''
-cnt_seconds = 0
 def solution(prices):
     # 예를 들어 price가 1000원일때 prices는 1000, 1010, 1010, 1020, 990 이런식으로 담길것이다
     # prices = [1000, 1010, 1010, 1020, 990]
     # 다시 1020원이 있을 때, 가격이 떨어졌는 지를 확인하려면 prices의 가장 마지막 요소를 뽑아서 비교를 하면 큰지 작은지 알 수 있다.
     answer = []
-    global cnt_seconds
-
-    cnt_seconds += 1
-    if prices[-2] > prices[-1]:   #prices1 현재 가격[-2]과 새로 들어온 가격[-1] 비교
-        answer.append(cnt_seconds)
-        #떨어졌을 때의 초를 확인해야 하므로 answer에 떨어졌을 때의 초를 append 한다.
-
+    for j in range(len(prices)):
+        for i in range(j + 1, len(prices)):
+            if prices[j] > prices[i]:
+                break
+        answer.append(i - j)
     return answer
