@@ -14,6 +14,7 @@ https://www.acmicpc.net/problem/10816
 구해야 할 M개의 정수가 주어지며, 이 수는 공백으로 구분되어져 있다. 이 수도 -10,000,000보다 크거나 같고,
 10,000,000보다 작거나 같다.
 '''
+'''
 n = int(input())
 trump = list(map(int, input().split()))
  #[6, 3, 2, 10, 10, 10, -10, -10, 7, 3]
@@ -37,6 +38,7 @@ def solution1(trump, n):
 
 
 # print(" ".join(str(cnt)))
+'''
 
 
 # 다른 사람 풀이1
